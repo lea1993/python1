@@ -58,3 +58,12 @@ print(re.findall(pattern, skript))
 # 2500-значное произвольное число.
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
+
+with open('filename.txt', 'w') as f:
+    for _ in range(2500):
+        f.write(random.range(0,9))
+import random
+file = open('filename.txt', 'w')
+for _ in range(2500):
+    file.write(random.range(0,9))
+file.close()
