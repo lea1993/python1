@@ -25,3 +25,8 @@ print(two)
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
+
+import random
+one = [random.randrange(-100,100) for _ in range(10)]
+two = [i for i in one if i > 0 and i % 3 == 0 and i % 4 != 0 ]
+print(one, two)
