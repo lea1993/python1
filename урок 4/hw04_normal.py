@@ -59,11 +59,40 @@ print(re.findall(pattern, skript))
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
 
-with open('filename.txt', 'w') as f:
-    for _ in range(2500):
-        f.write(random.range(0,9))
 import random
-file = open('filename.txt', 'w')
+file = open('filename.txt', 'w', encoding='UTF-8')
 for _ in range(2500):
-    file.write(random.range(0,9))
+    file.write(str(random.randint(0,9))) #создала число
 file.close()
+f = open('filename.txt', 'r', encoding='UTF-8')
+values = f.read() #вывела число в переменную
+#print(values)
+zero = 0
+list_max = []
+for i in values:
+    i = int(i)
+    list_max.append(i) #разбила число на цифры
+list_ = []
+    #z = list_i
+for s in range(len(list_max) - 1):
+    if list_max[zero] == list_max[zero + 1]:
+        list_s = []
+        list_s.append(list_max[zero])
+        zero += 1
+    else:
+        list_s =[]
+        list_s.append(list_max[zero + 1])
+        zero += 1
+    list_all = []
+    list_all.append(list_s)
+    
+#for s in range(len(list_max)):
+#    for j in range(len(list_max) - 1:
+#        if list_max[zero] == list_max[zero + 1]:
+#        list_i.append(list_max[zero])
+#    zero += 1
+        #= [[s for s in list_max if s == s] j for j in list_max if j == j]
+#    if i
+print(list_all)
+#print(data)
+f.close()
