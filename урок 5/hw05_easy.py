@@ -5,16 +5,16 @@
 
 import os
 import sys
-def my_dir(path):
+def mkdir(path):
     try:
         os.mkdir(path)
         print('директория создана')
     except FileExistsError:
         print('директрия уже есть')
 
-def del_dir(path):
+def rmdir(path):
     try:
-        os.removedirs(path)
+        os.remove(path)
         print('директория удалена')
     except FileExistsError:
         print('директории нет')
@@ -22,7 +22,7 @@ def del_dir(path):
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
-def all_dir():
+def list_dir():
     print([i for i in os.listdir() if os.path.isdir(i)])
 
 # Задача-3:
@@ -37,7 +37,7 @@ def copy_file():
 
 if __name__ == '__main__':
     dir_path = 'dir_()'
-    [my_dir(dir_path.format(i)) for i in range(1,10)]
-    [del_dir(dir_path.format(i)) for i in range(1,10)]
+    [mkdir(dir_path.format(i)) for i in range(1,10)]
+    [rmdir(dir_path.format(i)) for i in range(1,10)]
 
-    all_dir()
+    list_dir()
